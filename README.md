@@ -3,6 +3,10 @@
 ![tests](https://github.com/GayaLahouazi/federated-learning-noniid/actions/workflows/tests.yml/badge.svg)
 ![python](https://img.shields.io/badge/python-3.11%2B-blue) ![pytorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c) ![license](https://img.shields.io/badge/license-MIT-green)
 
+**Key result:** when each client sees only 2 classes out of 10, FedAvg loses ~19 accuracy points and some classes
+are never predicted again (worst class 0 %). SCAFFOLD is the only method that keeps every class alive (worst class
+38 % vs ≤ 2 %), at the price of instability and twice the communication.
+
 **Federated learning:** several clients (aircraft, sensors, hospitals, phones…) train one shared model
 **without sending their data**, only model updates. The hard case is when clients' data are very different:
 in the *pathological non-IID* setting each client only sees 2 classes out of 10. This project studies:
